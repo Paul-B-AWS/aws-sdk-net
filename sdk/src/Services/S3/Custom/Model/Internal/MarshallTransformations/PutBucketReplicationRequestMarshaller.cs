@@ -132,6 +132,15 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     }
                                     xmlWriter.WriteEndElement();
                                 }
+                                if (rule.SourceSelectionCriteria.IsSetReplicaModifications())
+                                {
+                                    xmlWriter.WriteStartElement("ReplicaModifications");
+                                    if (rule.SourceSelectionCriteria.ReplicaModifications.IsSetStatus())
+                                    {
+                                        xmlWriter.WriteElementString("Status", "", rule.SourceSelectionCriteria.ReplicaModifications.Status);
+                                    }
+                                    xmlWriter.WriteEndElement();
+                                }
                                 xmlWriter.WriteEndElement();
                             }
                             if (rule.IsSetExistingObjectReplication())
@@ -237,7 +246,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Content = Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                var checksum = AmazonS3Util.GenerateChecksumForContent(content, true);
+                var checksum = AWSSDKUtils.GenerateChecksumForContent(content, true);
                 request.Headers[HeaderKeys.ContentMD5Header] = checksum;
             }
             catch (EncoderFallbackException e)

@@ -66,7 +66,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Container. 
         /// <para>
-        /// An object representing the details of the container that is associated with the job.
+        /// An object representing the details of the container that's associated with the job.
         /// </para>
         /// </summary>
         public ContainerSummary Container
@@ -163,6 +163,11 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The node properties for a single node in a job summary list.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This isn't applicable to jobs running on Fargate resources.
+        /// </para>
+        ///  </note>
         /// </summary>
         public NodePropertiesSummary NodeProperties
         {

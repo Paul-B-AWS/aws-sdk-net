@@ -149,6 +149,11 @@
     <max>10</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.CreateEventSourceMappingRequest.TumblingWindowInSeconds</property>
+    <min>0</min>
+    <max>900</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.CreateEventSourceMappingResponse.BatchSize</property>
     <min>1</min>
     <max>10000</max>
@@ -182,6 +187,11 @@
     <max>10</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.CreateEventSourceMappingResponse.TumblingWindowInSeconds</property>
+    <min>0</min>
+    <max>900</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionRequest.CodeSigningConfigArn</property>
     <max>200</max>
     <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:code-signing-config:csc-[a-z0-9]{17}</pattern>
@@ -209,7 +219,7 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionRequest.MemorySize</property>
     <min>128</min>
-    <max>3008</max>
+    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionRequest.Role</property>
@@ -250,7 +260,7 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionResponse.MemorySize</property>
     <min>128</min>
-    <max>3008</max>
+    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionResponse.Role</property>
@@ -323,6 +333,11 @@
     <property>Amazon.Lambda.Model.DeleteEventSourceMappingResponse.ParallelizationFactor</property>
     <min>1</min>
     <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.DeleteEventSourceMappingResponse.TumblingWindowInSeconds</property>
+    <min>0</min>
+    <max>900</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.DeleteFunctionRequest.FunctionName</property>
@@ -450,6 +465,11 @@
     <max>10</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.GetEventSourceMappingResponse.TumblingWindowInSeconds</property>
+    <min>0</min>
+    <max>900</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionRequest.FunctionName</property>
     <min>1</min>
     <max>170</max>
@@ -531,7 +551,7 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionConfigurationResponse.MemorySize</property>
     <min>128</min>
-    <max>3008</max>
+    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionConfigurationResponse.Role</property>
@@ -888,7 +908,7 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.PublishVersionResponse.MemorySize</property>
     <min>128</min>
-    <max>3008</max>
+    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PublishVersionResponse.Role</property>
@@ -1136,6 +1156,11 @@
     <max>10</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.UpdateEventSourceMappingRequest.TumblingWindowInSeconds</property>
+    <min>0</min>
+    <max>900</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateEventSourceMappingResponse.BatchSize</property>
     <min>1</min>
     <max>10000</max>
@@ -1167,6 +1192,11 @@
     <property>Amazon.Lambda.Model.UpdateEventSourceMappingResponse.ParallelizationFactor</property>
     <min>1</min>
     <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.UpdateEventSourceMappingResponse.TumblingWindowInSeconds</property>
+    <min>0</min>
+    <max>900</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionCodeRequest.FunctionName</property>
@@ -1221,7 +1251,7 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionCodeResponse.MemorySize</property>
     <min>128</min>
-    <max>3008</max>
+    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionCodeResponse.Role</property>
@@ -1268,7 +1298,7 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationRequest.MemorySize</property>
     <min>128</min>
-    <max>3008</max>
+    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationRequest.Role</property>
@@ -1309,7 +1339,7 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationResponse.MemorySize</property>
     <min>128</min>
-    <max>3008</max>
+    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationResponse.Role</property>
@@ -1418,6 +1448,10 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.ImageConfig.WorkingDirectory</property>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.Layer.Arn</property>
     <min>1</min>
     <max>140</max>
@@ -1504,6 +1538,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.SourceAccessConfiguration.URI</property>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)</pattern>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[a-zA-Z0-9-\/*:_+=.@-]*</pattern>
   </property-value-rule>
 </property-value-rules>

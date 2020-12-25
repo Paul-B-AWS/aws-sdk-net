@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// You have reached the limit for maximum number of simultaneous region replications
+    /// You have reached the limit for maximum number of simultaneous Region replications
     /// per directory.
     /// </summary>
     #if !NETSTANDARD

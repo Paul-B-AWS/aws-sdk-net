@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// The retry strategy associated with a job.
+    /// The retry strategy associated with a job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_retries.html">Automated
+    /// job retries</a> in the <i>AWS Batch User Guide</i>.
     /// </summary>
     public partial class RetryStrategy
     {
@@ -39,7 +40,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Attempts. 
         /// <para>
-        /// The number of times to move a job to the <code>RUNNABLE</code> status. You may specify
+        /// The number of times to move a job to the <code>RUNNABLE</code> status. You can specify
         /// between 1 and 10 attempts. If the value of <code>attempts</code> is greater than one,
         /// the job is retried on failure the same number of attempts as the value.
         /// </para>

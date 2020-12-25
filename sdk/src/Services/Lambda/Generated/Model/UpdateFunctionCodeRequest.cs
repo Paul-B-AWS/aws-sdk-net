@@ -39,11 +39,19 @@ namespace Amazon.Lambda.Model
     /// The function's code is locked when you publish a version. You can't modify the code
     /// of a published version, only the unpublished version.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// For a function defined as a container image, Lambda resolves the image tag to an image
+    /// digest. In Amazon ECR, if you update the image tag to a new image, Lambda does not
+    /// automatically update the function.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateFunctionCodeRequest : AmazonLambdaRequest
     {
         private bool? _dryRun;
         private string _functionName;
+        private string _imageUri;
         private bool? _publish;
         private string _revisionId;
         private string _s3Bucket;
@@ -106,6 +114,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetFunctionName()
         {
             return this._functionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageUri. 
+        /// <para>
+        /// URI of a container image in the Amazon ECR registry.
+        /// </para>
+        /// </summary>
+        public string ImageUri
+        {
+            get { return this._imageUri; }
+            set { this._imageUri = value; }
+        }
+
+        // Check to see if ImageUri property is set
+        internal bool IsSetImageUri()
+        {
+            return this._imageUri != null;
         }
 
         /// <summary>

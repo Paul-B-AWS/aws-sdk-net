@@ -103,6 +103,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.CopyTagsToSnapshot = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("CustomerOwnedIpEnabled", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.CustomerOwnedIpEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DBClusterIdentifier", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -113,6 +119,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.DBInstanceArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DBInstanceAutomatedBackupsReplications/DBInstanceAutomatedBackupsReplication", targetDepth))
+                    {
+                        var unmarshaller = DBInstanceAutomatedBackupsReplicationUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.DBInstanceAutomatedBackupsReplications.Add(item);
                         continue;
                     }
                     if (context.TestExpression("DBInstanceClass", targetDepth))

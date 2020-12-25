@@ -79,6 +79,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     }
                                     xmlWriter.WriteEndElement();
                                 }
+
+                                if (serverSideEncryptionRule.IsSetBucketKeyEnabled())
+                                {
+                                    xmlWriter.WriteElementString("BucketKeyEnabled", "", S3Transforms.ToXmlStringValue(serverSideEncryptionRule.BucketKeyEnabled));
+                                }
                             }
                             xmlWriter.WriteEndElement();
                         }
@@ -93,7 +98,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Content = Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                var checksum = AmazonS3Util.GenerateChecksumForContent(content, true);
+                var checksum = AWSSDKUtils.GenerateChecksumForContent(content, true);
                 if (putBucketEncryptionRequest.IsSetContentMD5())
                     checksum = putBucketEncryptionRequest.ContentMD5;
                 

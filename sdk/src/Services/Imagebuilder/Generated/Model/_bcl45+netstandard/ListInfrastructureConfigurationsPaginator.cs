@@ -42,6 +42,12 @@ namespace Amazon.Imagebuilder.Model
         /// </summary>
         public IPaginatedEnumerable<ListInfrastructureConfigurationsResponse> Responses => new PaginatedResponse<ListInfrastructureConfigurationsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the InfrastructureConfigurationSummaryList
+        /// </summary>
+        public IPaginatedEnumerable<InfrastructureConfigurationSummary> InfrastructureConfigurationSummaryList => 
+            new PaginatedResultKeyResponse<ListInfrastructureConfigurationsResponse, InfrastructureConfigurationSummary>(this, (i) => i.InfrastructureConfigurationSummaryList);
+
         internal ListInfrastructureConfigurationsPaginator(IAmazonImagebuilder client, ListInfrastructureConfigurationsRequest request)
         {
             this._client = client;
@@ -64,7 +70,7 @@ namespace Amazon.Imagebuilder.Model
                 nextToken = response.NextToken;
                 yield return response;
             }
-            while (nextToken != null);
+            while (!string.IsNullOrEmpty(nextToken));
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
@@ -85,7 +91,7 @@ namespace Amazon.Imagebuilder.Model
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
             }
-            while (nextToken != null);
+            while (!string.IsNullOrEmpty(nextToken));
         }
 #endif
     }

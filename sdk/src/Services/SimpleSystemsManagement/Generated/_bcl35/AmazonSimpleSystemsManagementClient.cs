@@ -1273,6 +1273,79 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  CreateOpsMetadata
+
+        /// <summary>
+        /// If you create a new application in Application Manager, Systems Manager calls this
+        /// API action to specify information about the new application, including the application
+        /// type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOpsMetadata service method.</param>
+        /// 
+        /// <returns>The response from the CreateOpsMetadata service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataAlreadyExistsException">
+        /// An OpsMetadata object already exists for the selected resource.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataInvalidArgumentException">
+        /// One of the arguments passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataLimitExceededException">
+        /// Your account reached the maximum number of OpsMetadata objects allowed by Application
+        /// Manager. The maximum is 200 OpsMetadata objects. Delete one or more OpsMetadata object
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataTooManyUpdatesException">
+        /// The system is processing too many concurrent updates. Wait a few moments and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsMetadata">REST API Reference for CreateOpsMetadata Operation</seealso>
+        public virtual CreateOpsMetadataResponse CreateOpsMetadata(CreateOpsMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateOpsMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOpsMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<CreateOpsMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateOpsMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateOpsMetadata operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateOpsMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsMetadata">REST API Reference for CreateOpsMetadata Operation</seealso>
+        public virtual IAsyncResult BeginCreateOpsMetadata(CreateOpsMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateOpsMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOpsMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateOpsMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateOpsMetadata.</param>
+        /// 
+        /// <returns>Returns a  CreateOpsMetadataResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsMetadata">REST API Reference for CreateOpsMetadata Operation</seealso>
+        public virtual CreateOpsMetadataResponse EndCreateOpsMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateOpsMetadataResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreatePatchBaseline
 
         /// <summary>
@@ -1906,6 +1979,69 @@ namespace Amazon.SimpleSystemsManagement
         public virtual DeleteMaintenanceWindowResponse EndDeleteMaintenanceWindow(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteMaintenanceWindowResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteOpsMetadata
+
+        /// <summary>
+        /// Delete OpsMetadata related to an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOpsMetadata service method.</param>
+        /// 
+        /// <returns>The response from the DeleteOpsMetadata service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataInvalidArgumentException">
+        /// One of the arguments passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataNotFoundException">
+        /// The OpsMetadata object does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteOpsMetadata">REST API Reference for DeleteOpsMetadata Operation</seealso>
+        public virtual DeleteOpsMetadataResponse DeleteOpsMetadata(DeleteOpsMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOpsMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOpsMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteOpsMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteOpsMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOpsMetadata operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteOpsMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteOpsMetadata">REST API Reference for DeleteOpsMetadata Operation</seealso>
+        public virtual IAsyncResult BeginDeleteOpsMetadata(DeleteOpsMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOpsMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOpsMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteOpsMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteOpsMetadata.</param>
+        /// 
+        /// <returns>Returns a  DeleteOpsMetadataResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteOpsMetadata">REST API Reference for DeleteOpsMetadata Operation</seealso>
+        public virtual DeleteOpsMetadataResponse EndDeleteOpsMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteOpsMetadataResponse>(asyncResult);
         }
 
         #endregion
@@ -4241,6 +4377,15 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Lists the tasks in a maintenance window.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// For maintenance window tasks without a specified target, you cannot supply values
+        /// for <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the system
+        /// inserts a placeholder value of <code>1</code>, which may be reported in the response
+        /// to this command. These values do not affect the running of your task and can be ignored.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowTasks service method.</param>
         /// 
@@ -4655,6 +4800,10 @@ namespace Amazon.SimpleSystemsManagement
         ///  </dd> <dt>DEBIAN</dt> <dd> 
         /// <para>
         /// Valid properties: PRODUCT, PRIORITY
+        /// </para>
+        ///  </dd> <dt>MACOS</dt> <dd> 
+        /// <para>
+        /// Valid properties: PRODUCT, CLASSIFICATION
         /// </para>
         ///  </dd> <dt>ORACLE_LINUX</dt> <dd> 
         /// <para>
@@ -5717,6 +5866,15 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Lists the tasks in a maintenance window.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// For maintenance window tasks without a specified target, you cannot supply values
+        /// for <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the system
+        /// inserts a placeholder value of <code>1</code>, which may be reported in the response
+        /// to this command. These values do not affect the running of your task and can be ignored.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMaintenanceWindowTask service method.</param>
         /// 
@@ -5847,6 +6005,69 @@ namespace Amazon.SimpleSystemsManagement
         public virtual GetOpsItemResponse EndGetOpsItem(IAsyncResult asyncResult)
         {
             return EndInvoke<GetOpsItemResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetOpsMetadata
+
+        /// <summary>
+        /// View operational metadata related to an application in Application Manager.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOpsMetadata service method.</param>
+        /// 
+        /// <returns>The response from the GetOpsMetadata service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataInvalidArgumentException">
+        /// One of the arguments passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataNotFoundException">
+        /// The OpsMetadata object does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsMetadata">REST API Reference for GetOpsMetadata Operation</seealso>
+        public virtual GetOpsMetadataResponse GetOpsMetadata(GetOpsMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetOpsMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOpsMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<GetOpsMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetOpsMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetOpsMetadata operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetOpsMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsMetadata">REST API Reference for GetOpsMetadata Operation</seealso>
+        public virtual IAsyncResult BeginGetOpsMetadata(GetOpsMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetOpsMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOpsMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetOpsMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetOpsMetadata.</param>
+        /// 
+        /// <returns>Returns a  GetOpsMetadataResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsMetadata">REST API Reference for GetOpsMetadata Operation</seealso>
+        public virtual GetOpsMetadataResponse EndGetOpsMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetOpsMetadataResponse>(asyncResult);
         }
 
         #endregion
@@ -7161,6 +7382,72 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  ListDocumentMetadataHistory
+
+        /// <summary>
+        /// Information about approval reviews for a version of an SSM document.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDocumentMetadataHistory service method.</param>
+        /// 
+        /// <returns>The response from the ListDocumentMetadataHistory service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
+        /// The specified document does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
+        /// The document version is not valid or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentMetadataHistory">REST API Reference for ListDocumentMetadataHistory Operation</seealso>
+        public virtual ListDocumentMetadataHistoryResponse ListDocumentMetadataHistory(ListDocumentMetadataHistoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDocumentMetadataHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDocumentMetadataHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<ListDocumentMetadataHistoryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDocumentMetadataHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDocumentMetadataHistory operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDocumentMetadataHistory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentMetadataHistory">REST API Reference for ListDocumentMetadataHistory Operation</seealso>
+        public virtual IAsyncResult BeginListDocumentMetadataHistory(ListDocumentMetadataHistoryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDocumentMetadataHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDocumentMetadataHistoryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDocumentMetadataHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDocumentMetadataHistory.</param>
+        /// 
+        /// <returns>Returns a  ListDocumentMetadataHistoryResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentMetadataHistory">REST API Reference for ListDocumentMetadataHistory Operation</seealso>
+        public virtual ListDocumentMetadataHistoryResponse EndListDocumentMetadataHistory(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDocumentMetadataHistoryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListDocuments
 
         /// <summary>
@@ -7392,6 +7679,137 @@ namespace Amazon.SimpleSystemsManagement
         public virtual ListInventoryEntriesResponse EndListInventoryEntries(IAsyncResult asyncResult)
         {
             return EndInvoke<ListInventoryEntriesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListOpsItemEvents
+
+        /// <summary>
+        /// Returns a list of all OpsItem events in the current AWS account and Region. You can
+        /// limit the results to events associated with specific OpsItems by specifying a filter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOpsItemEvents service method.</param>
+        /// 
+        /// <returns>The response from the ListOpsItemEvents service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemInvalidParameterException">
+        /// A specified parameter argument isn't valid. Verify the available arguments and try
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemLimitExceededException">
+        /// The request caused OpsItems to exceed one or more quotas. For information about OpsItem
+        /// quotas, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What
+        /// are the resource limits for OpsCenter?</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemNotFoundException">
+        /// The specified OpsItem ID doesn't exist. Verify the ID and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemEvents">REST API Reference for ListOpsItemEvents Operation</seealso>
+        public virtual ListOpsItemEventsResponse ListOpsItemEvents(ListOpsItemEventsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOpsItemEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOpsItemEventsResponseUnmarshaller.Instance;
+
+            return Invoke<ListOpsItemEventsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOpsItemEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOpsItemEvents operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOpsItemEvents
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemEvents">REST API Reference for ListOpsItemEvents Operation</seealso>
+        public virtual IAsyncResult BeginListOpsItemEvents(ListOpsItemEventsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOpsItemEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOpsItemEventsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListOpsItemEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOpsItemEvents.</param>
+        /// 
+        /// <returns>Returns a  ListOpsItemEventsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemEvents">REST API Reference for ListOpsItemEvents Operation</seealso>
+        public virtual ListOpsItemEventsResponse EndListOpsItemEvents(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListOpsItemEventsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListOpsMetadata
+
+        /// <summary>
+        /// Systems Manager calls this API action when displaying all Application Manager OpsMetadata
+        /// objects or blobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOpsMetadata service method.</param>
+        /// 
+        /// <returns>The response from the ListOpsMetadata service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataInvalidArgumentException">
+        /// One of the arguments passed is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsMetadata">REST API Reference for ListOpsMetadata Operation</seealso>
+        public virtual ListOpsMetadataResponse ListOpsMetadata(ListOpsMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOpsMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOpsMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<ListOpsMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOpsMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOpsMetadata operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOpsMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsMetadata">REST API Reference for ListOpsMetadata Operation</seealso>
+        public virtual IAsyncResult BeginListOpsMetadata(ListOpsMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOpsMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOpsMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListOpsMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOpsMetadata.</param>
+        /// 
+        /// <returns>Returns a  ListOpsMetadataResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsMetadata">REST API Reference for ListOpsMetadata Operation</seealso>
+        public virtual ListOpsMetadataResponse EndListOpsMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListOpsMetadataResponse>(asyncResult);
         }
 
         #endregion
@@ -9015,6 +9433,88 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  StartChangeRequestExecution
+
+        /// <summary>
+        /// Creates a change request for Change Manager. The runbooks (Automation documents) specified
+        /// in the change request run only after all required approvals for the change request
+        /// have been received.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartChangeRequestExecution service method.</param>
+        /// 
+        /// <returns>The response from the StartChangeRequestExecution service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AutomationDefinitionNotApprovedException">
+        /// Indicates that the Change Manager change template used in the change request was rejected
+        /// or is still in a pending state.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AutomationDefinitionNotFoundException">
+        /// An Automation document with the specified name could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AutomationDefinitionVersionNotFoundException">
+        /// An Automation document with the specified name and version could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AutomationExecutionLimitExceededException">
+        /// The number of simultaneously running Automation executions exceeded the allowable
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.IdempotentParameterMismatchException">
+        /// Error returned when an idempotent operation is retried and the parameters don't match
+        /// the original call to the API with the same idempotency token.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAutomationExecutionParametersException">
+        /// The supplied parameters for invoking the specified Automation document are incorrect.
+        /// For example, they may not match the set of parameters permitted for the specified
+        /// Automation document.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartChangeRequestExecution">REST API Reference for StartChangeRequestExecution Operation</seealso>
+        public virtual StartChangeRequestExecutionResponse StartChangeRequestExecution(StartChangeRequestExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartChangeRequestExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartChangeRequestExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<StartChangeRequestExecutionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartChangeRequestExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartChangeRequestExecution operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartChangeRequestExecution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartChangeRequestExecution">REST API Reference for StartChangeRequestExecution Operation</seealso>
+        public virtual IAsyncResult BeginStartChangeRequestExecution(StartChangeRequestExecutionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartChangeRequestExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartChangeRequestExecutionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartChangeRequestExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartChangeRequestExecution.</param>
+        /// 
+        /// <returns>Returns a  StartChangeRequestExecutionResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartChangeRequestExecution">REST API Reference for StartChangeRequestExecution Operation</seealso>
+        public virtual StartChangeRequestExecutionResponse EndStartChangeRequestExecution(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartChangeRequestExecutionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartSession
 
         /// <summary>
@@ -9586,6 +10086,73 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  UpdateDocumentMetadata
+
+        /// <summary>
+        /// Updates information related to approval reviews for a specific version of a document.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentMetadata service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDocumentMetadata service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
+        /// The specified document does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentOperationException">
+        /// You attempted to delete a document while it is still shared. You must stop sharing
+        /// the document before you can delete it.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
+        /// The document version is not valid or does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentMetadata">REST API Reference for UpdateDocumentMetadata Operation</seealso>
+        public virtual UpdateDocumentMetadataResponse UpdateDocumentMetadata(UpdateDocumentMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDocumentMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDocumentMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDocumentMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDocumentMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentMetadata operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDocumentMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentMetadata">REST API Reference for UpdateDocumentMetadata Operation</seealso>
+        public virtual IAsyncResult BeginUpdateDocumentMetadata(UpdateDocumentMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDocumentMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDocumentMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDocumentMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDocumentMetadata.</param>
+        /// 
+        /// <returns>Returns a  UpdateDocumentMetadataResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentMetadata">REST API Reference for UpdateDocumentMetadata Operation</seealso>
+        public virtual UpdateDocumentMetadataResponse EndUpdateDocumentMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateDocumentMetadataResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateMaintenanceWindow
 
         /// <summary>
@@ -9793,7 +10360,15 @@ namespace Amazon.SimpleSystemsManagement
         /// <para>
         /// MaxErrors
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// One or more targets must be specified for maintenance window Run Command-type tasks.
+        /// Depending on the task, targets are optional for other maintenance window task types
+        /// (Automation, AWS Lambda, and AWS Step Functions). For more information about running
+        /// tasks that do not specify targets, see see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+        /// maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If the value for a parameter in <code>UpdateMaintenanceWindowTask</code> is null,
         /// then the corresponding field is not modified. If you set <code>Replace</code> to true,
@@ -10033,6 +10608,76 @@ namespace Amazon.SimpleSystemsManagement
         public virtual UpdateOpsItemResponse EndUpdateOpsItem(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateOpsItemResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateOpsMetadata
+
+        /// <summary>
+        /// Systems Manager calls this API action when you edit OpsMetadata in Application Manager.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOpsMetadata service method.</param>
+        /// 
+        /// <returns>The response from the UpdateOpsMetadata service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataInvalidArgumentException">
+        /// One of the arguments passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataKeyLimitExceededException">
+        /// The OpsMetadata object exceeds the maximum number of OpsMetadata keys that you can
+        /// assign to an application in Application Manager.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataNotFoundException">
+        /// The OpsMetadata object does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataTooManyUpdatesException">
+        /// The system is processing too many concurrent updates. Wait a few moments and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsMetadata">REST API Reference for UpdateOpsMetadata Operation</seealso>
+        public virtual UpdateOpsMetadataResponse UpdateOpsMetadata(UpdateOpsMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateOpsMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateOpsMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateOpsMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateOpsMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOpsMetadata operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateOpsMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsMetadata">REST API Reference for UpdateOpsMetadata Operation</seealso>
+        public virtual IAsyncResult BeginUpdateOpsMetadata(UpdateOpsMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateOpsMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateOpsMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateOpsMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateOpsMetadata.</param>
+        /// 
+        /// <returns>Returns a  UpdateOpsMetadataResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsMetadata">REST API Reference for UpdateOpsMetadata Operation</seealso>
+        public virtual UpdateOpsMetadataResponse EndUpdateOpsMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateOpsMetadataResponse>(asyncResult);
         }
 
         #endregion

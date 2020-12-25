@@ -67,6 +67,11 @@ namespace Amazon.Connect.Model
         IListInstanceStorageConfigsPaginator ListInstanceStorageConfigs(ListInstanceStorageConfigsRequest request);
 
         /// <summary>
+        /// Paginator for ListIntegrationAssociations operation
+        ///</summary>
+        IListIntegrationAssociationsPaginator ListIntegrationAssociations(ListIntegrationAssociationsRequest request);
+
+        /// <summary>
         /// Paginator for ListLambdaFunctions operation
         ///</summary>
         IListLambdaFunctionsPaginator ListLambdaFunctions(ListLambdaFunctionsRequest request);
@@ -92,6 +97,11 @@ namespace Amazon.Connect.Model
         IListQueuesPaginator ListQueues(ListQueuesRequest request);
 
         /// <summary>
+        /// Paginator for ListQuickConnects operation
+        ///</summary>
+        IListQuickConnectsPaginator ListQuickConnects(ListQuickConnectsRequest request);
+
+        /// <summary>
         /// Paginator for ListRoutingProfileQueues operation
         ///</summary>
         IListRoutingProfileQueuesPaginator ListRoutingProfileQueues(ListRoutingProfileQueuesRequest request);
@@ -110,6 +120,11 @@ namespace Amazon.Connect.Model
         /// Paginator for ListSecurityProfiles operation
         ///</summary>
         IListSecurityProfilesPaginator ListSecurityProfiles(ListSecurityProfilesRequest request);
+
+        /// <summary>
+        /// Paginator for ListUseCases operation
+        ///</summary>
+        IListUseCasesPaginator ListUseCases(ListUseCasesRequest request);
 
         /// <summary>
         /// Paginator for ListUserHierarchyGroups operation

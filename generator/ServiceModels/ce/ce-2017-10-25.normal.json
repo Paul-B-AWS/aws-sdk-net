@@ -609,7 +609,7 @@
           "documentation":"<p> Your unique account identifier. </p>"
         },
         "MonitorArnList":{
-          "shape":"Values",
+          "shape":"MonitorArnList",
           "documentation":"<p> A list of cost anomaly monitors. </p>"
         },
         "Subscribers":{
@@ -2496,6 +2496,10 @@
       },
       "documentation":"<p> Details on the modification recommendation.</p>"
     },
+    "MonitorArnList":{
+      "type":"list",
+      "member":{"shape":"Arn"}
+    },
     "MonitorDimension":{
       "type":"string",
       "enum":["SERVICE"]
@@ -3055,6 +3059,10 @@
         "LookbackPeriodInDays":{
           "shape":"LookbackPeriodInDays",
           "documentation":"<p> How many days of previous usage that AWS considers when making this recommendation.</p>"
+        },
+        "AdditionalMetadata":{
+          "shape":"GenericString",
+          "documentation":"<p>Additional metadata that may be applicable to the recommendation.</p>"
         }
       },
       "documentation":"<p>Metadata for this recommendation set.</p>"
@@ -3735,8 +3743,8 @@
           "documentation":"<p> The update to the frequency value at which subscribers will receive notifications. </p>"
         },
         "MonitorArnList":{
-          "shape":"Values",
-          "documentation":"<p> A list of cost anomaly subscription ARNs. </p>"
+          "shape":"MonitorArnList",
+          "documentation":"<p> A list of cost anomaly monitor ARNs. </p>"
         },
         "Subscribers":{
           "shape":"Subscribers",

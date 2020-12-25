@@ -29,8 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// Object representing any node overrides to a job definition that is used in a <a>SubmitJob</a>
+    /// Object representing any node overrides to a job definition that's used in a <a>SubmitJob</a>
     /// API operation.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This isn't applicable to jobs running on Fargate resources and shouldn't be provided;
+    /// use <code>containerOverrides</code> instead.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class NodeOverrides
     {
